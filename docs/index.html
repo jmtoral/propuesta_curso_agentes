@@ -19,6 +19,7 @@
     <a class="btn" href="#evolucion">Conceptos</a>
     <a class="btn" href="#costos">Costos</a>
     <a class="btn" href="#temario">Presentaciones</a>
+    <a class="btn" href="#bibliografia">Bibliografía</a>
   </nav>
 </header>
 
@@ -198,6 +199,63 @@
       </div></article>
     </div>
     <p style="margin-top:20px">El proyecto propio se elige entre las sesiones 3 y 4, y se trabaja entre sesiones con acompañamiento.</p>
+  </section>
+
+  <section id="bibliografia">
+    <h2>Bibliografía</h2>
+    <p style="margin-top:16px">Diez artículos que explican de dónde salen los agentes. No hace falta leerlos para el curso; están aquí para quien quiera ir a la fuente. Todos están abiertos en arXiv.</p>
+    <div class="sesiones">
+      <article class="sesion"><div class="num">1</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></h3>
+        <p class="practica">Vaswani et al. · Google · 2017</p>
+        <p>Presenta el <b>Transformer</b>, la arquitectura detrás de todos los modelos actuales, Claude incluido. Su idea central, la «atención», permite que cada palabra se relacione con todas las demás del texto a la vez. Es el origen de la «ventana de contexto».</p>
+      </div></article>
+      <article class="sesion"><div class="num">2</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a></h3>
+        <p class="practica">Yao et al. · Princeton y Google · 2022</p>
+        <p>El modelo alterna entre <b>razonar</b> (escribir qué piensa hacer) y <b>actuar</b> (usar una herramienta), y ajusta su plan según lo que observa. Es el bucle del diagrama «Chat vs. agente», y la base de casi todos los agentes de hoy.</p>
+      </div></article>
+      <article class="sesion"><div class="num">3</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models Can Teach Themselves to Use Tools</a></h3>
+        <p class="practica">Schick et al. · Meta · 2023</p>
+        <p>Un modelo aprende por sí mismo cuándo conviene llamar a una herramienta externa (calculadora, buscador, calendario) y cómo usar la respuesta. Abre la era del uso de herramientas: el agente ya no tiene que saberlo todo, puede consultarlo.</p>
+      </div></article>
+      <article class="sesion"><div class="num">4</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2304.03442">Generative Agents: Interactive Simulacra of Human Behavior</a></h3>
+        <p class="practica">Park et al. · Stanford y Google · 2023</p>
+        <p>25 agentes viven en un pueblo simulado: recuerdan, reflexionan, planean su día y organizan una fiesta sin que nadie se lo ordene. Muestra el peso de la <b>memoria</b>: qué guarda el agente y qué recupera en cada momento.</p>
+      </div></article>
+      <article class="sesion"><div class="num">5</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2303.11366">Reflexion: Language Agents with Verbal Reinforcement Learning</a></h3>
+        <p class="practica">Shinn et al. · Northeastern, MIT y Princeton · 2023</p>
+        <p>Cuando el agente falla, escribe en palabras qué salió mal y usa esa nota en el siguiente intento. Aprende sin reentrenar el modelo. Es la idea detrás de los <b>sensores</b>: un hook que le devuelve el error al agente para que se corrija.</p>
+      </div></article>
+      <article class="sesion"><div class="num">6</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2305.10601">Tree of Thoughts: Deliberate Problem Solving with Large Language Models</a></h3>
+        <p class="practica">Yao et al. · Princeton y Google DeepMind · 2023</p>
+        <p>En lugar de seguir una sola línea de razonamiento, el modelo explora varias rutas, las evalúa y retrocede si una no lleva a nada, como un árbol de búsqueda. Explica por qué <b>pedir un plan antes de ejecutar</b> mejora el resultado.</p>
+      </div></article>
+      <article class="sesion"><div class="num">7</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2303.17580">HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face</a></h3>
+        <p class="practica">Shen et al. · Zhejiang y Microsoft Research Asia · 2023</p>
+        <p>Un modelo de lenguaje funciona como <b>director</b>: entiende la petición, la divide en tareas, elige otros modelos especializados para cada una y junta los resultados. Un antecedente directo de la orquestación de la sesión 7.</p>
+      </div></article>
+      <article class="sesion"><div class="num">8</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2305.16291">Voyager: An Open-Ended Embodied Agent with Large Language Models</a></h3>
+        <p class="practica">Wang et al. · NVIDIA, Caltech y otros · 2023</p>
+        <p>Un agente explora Minecraft sin fin y guarda cada habilidad que aprende como código reutilizable en una <b>biblioteca de habilidades</b>. Es la misma idea que las skills de la sesión 4: lo que funcionó una vez se empaqueta para la siguiente.</p>
+      </div></article>
+      <article class="sesion"><div class="num">9</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2308.08155">AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation</a></h3>
+        <p class="practica">Wu et al. · Microsoft Research y otros · 2023</p>
+        <p>Varios agentes con roles distintos conversan entre sí para resolver una tarea: uno escribe, otro revisa, otro ejecuta. Es el modelo de <b>reportero y editor</b> del ejercicio de verificación de la sesión 7.</p>
+      </div></article>
+      <article class="sesion"><div class="num">10</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2308.11432">A Survey on Large Language Model based Autonomous Agents</a></h3>
+        <p class="practica">Wang et al. · Renmin University of China · 2023</p>
+        <p>Un mapa del campo: cómo se construye un agente (perfil, memoria, planeación, acción), dónde se aplica y cómo se evalúa. Buen punto de partida para quien quiera una vista de conjunto.</p>
+      </div></article>
+    </div>
   </section>
 
   <section>
