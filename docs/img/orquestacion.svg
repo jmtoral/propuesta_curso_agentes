@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="El orquestador reparte cinco afirmaciones a cinco verificadores, un editor revisa y tú decides">
+  <defs>
+    <marker id="o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+  </defs>
+  <style>
+    .t { font: 900 17px "Arial Black", Impact, sans-serif; fill: #111; }
+    .b { font: 700 16px Arial, sans-serif; fill: #111; }
+    .s { font: 14px Arial, sans-serif; fill: #111; }
+    .l { stroke: #111; stroke-width: 3; fill: none; marker-end: url(#o); }
+  </style>
+  <rect x="26" y="216" width="170" height="96" fill="#111"/><rect x="20" y="210" width="170" height="96" fill="#ffd60a" stroke="#111" stroke-width="4"/>
+  <text class="t" x="105" y="244" text-anchor="middle">ORQUESTADOR</text>
+  <text class="s" x="105" y="268" text-anchor="middle">lee la conferencia y</text>
+  <text class="s" x="105" y="288" text-anchor="middle">extrae 5 afirmaciones</text>
+
+  <g>
+    <rect x="300" y="30" width="200" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/><text class="b" x="400" y="68" text-anchor="middle">Verificador 1</text>
+    <rect x="300" y="125" width="200" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/><text class="b" x="400" y="163" text-anchor="middle">Verificador 2</text>
+    <rect x="300" y="220" width="200" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/><text class="b" x="400" y="258" text-anchor="middle">Verificador 3</text>
+    <rect x="300" y="315" width="200" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/><text class="b" x="400" y="353" text-anchor="middle">Verificador 4</text>
+    <rect x="300" y="410" width="200" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/><text class="b" x="400" y="448" text-anchor="middle">Verificador 5</text>
+  </g>
+  <text class="s" x="400" y="502" text-anchor="middle">en paralelo, cada uno con sus fuentes</text>
+  <path class="l" d="M190 240L294 66"/><path class="l" d="M190 250L294 158"/><path class="l" d="M190 258H294"/><path class="l" d="M190 266L294 350"/><path class="l" d="M190 276L294 440"/>
+
+  <rect x="596" y="216" width="130" height="96" fill="#111"/><rect x="590" y="210" width="130" height="96" fill="#ff6b9d" stroke="#111" stroke-width="4"/>
+  <text class="t" x="655" y="244" text-anchor="middle">EDITOR</text>
+  <text class="s" x="655" y="268" text-anchor="middle">duda de las</text>
+  <text class="s" x="655" y="288" text-anchor="middle">fuentes</text>
+  <path class="l" d="M500 62L584 236"/><path class="l" d="M500 157L584 246"/><path class="l" d="M500 252H584"/><path class="l" d="M500 347L584 270"/><path class="l" d="M500 442L584 284"/>
+
+  <rect x="772" y="196" width="112" height="124" fill="#111"/><rect x="766" y="190" width="112" height="124" fill="#b8f35a" stroke="#111" stroke-width="4"/>
+  <text class="t" x="822" y="220" text-anchor="middle">TABLA</text>
+  <text class="s" x="822" y="246" text-anchor="middle">verificado</text>
+  <text class="s" x="822" y="266" text-anchor="middle">falso</text>
+  <text class="s" x="822" y="286" text-anchor="middle">sin verificar</text>
+  <path class="l" d="M720 258H760"/>
+
+  <rect x="752" y="370" width="140" height="56" fill="#111"/>
+  <text class="t" x="822" y="404" text-anchor="middle" style="fill:#ffd60a">TÚ DECIDES</text>
+  <path class="l" d="M822 314V364"/>
+</svg>

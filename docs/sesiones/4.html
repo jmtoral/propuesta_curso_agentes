@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 4 · Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d rosa">
+  <span class="kicker">Sesión 4 de 6</span>
+  <h1>Skills</h1>
+  <p>Empaquetar un procedimiento para no explicarlo dos veces.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">El problema</span>
+  <p class="enorme">Cada mes le explican lo mismo al agente. <mark>Y cada mes lo hace un poco distinto.</mark></p>
+</section>
+
+<section class="d">
+  <span class="kicker">Dónde estamos</span>
+  <div class="diagrama"><img src="../img/harness.svg" alt="Las cuatro piezas del agente: CLAUDE.md, skills, hooks y subagentes alrededor del bucle."></div>
+</section>
+
+<section class="d cian">
+  <span class="kicker">Qué es una skill</span>
+  <h2>Una receta que el agente sabe cuándo usar</h2>
+  <ul>
+    <li>Una carpeta con un archivo <code>SKILL.md</code>: nombre, descripción e instrucciones paso a paso.</li>
+    <li>El agente lee solo la descripción. Cuando la tarea coincide, carga la receta completa.</li>
+    <li>También la pueden llamar a mano con <code>/nombre-de-la-skill</code>.</li>
+  </ul>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Dónde vive</span>
+  <pre>mananeras/
+├── CLAUDE.md
+└── .claude/
+    └── skills/
+        └── contar-preguntas/
+            └── SKILL.md</pre>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Ejemplo</span>
+  <pre>---
+name: contar-preguntas
+description: Cuenta quién pregunta en las mañaneras y de
+  qué tema. Úsala cuando pidan conteos por periodista,
+  medio o tema a partir del CSV de turnos.
+---
+
+1. Lee data/outputs/turnos.csv.
+2. Quédate solo con turnos de prensa.
+3. Cuenta preguntas por periodista y por medio.
+4. Clasifica cada pregunta en un tema de esta lista:
+   seguridad, economía, salud, política, otro.
+5. Guarda conteos.csv y muestra las 10 primeras filas.
+6. Avisa cuántas preguntas quedaron en "otro".</pre>
+</section>
+
+<section class="d lima">
+  <span class="kicker">No confundir</span>
+  <div class="dos">
+    <div class="caja"><b>CLAUDE.md</b>Se lee <b>siempre</b>. Reglas del proyecto: qué nunca hacer, dónde va cada cosa.</div>
+    <div class="caja"><b>Skill</b>Se carga <b>cuando aplica</b>. Un procedimiento concreto que se repite.</div>
+  </div>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">La clave</span>
+  <p class="enorme">La descripción decide si la skill se usa.</p>
+  <p>Digan qué hace <b>y cuándo usarla</b>, con las palabras que ustedes usarían al pedirlo.</p>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Práctica · 45 min</span>
+  <h2>Su primera skill</h2>
+  <ol>
+    <li>Pídanle al agente que les ayude a escribir <code>contar-preguntas</code>, explicándole el procedimiento con sus palabras.</li>
+    <li>Ábranla en VS Code y corrijan lo que no les guste.</li>
+    <li>Pruébenla con <code>/clear</code> y un pedido normal: «¿quién preguntó más en septiembre?». ¿La usó?</li>
+    <li>Commit.</li>
+  </ol>
+</section>
+
+<section class="d negro">
+  <span class="kicker">No hay que inventarlo todo</span>
+  <p class="enorme">Skills de la <mark>comunidad</mark></p>
+  <p>Se instalan como <b>plugins</b>: paquetes que pueden traer skills, comandos y hooks.</p>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">grill-me · Matt Pocock</span>
+  <h2>Que el agente te interrogue</h2>
+  <p>En lugar de ejecutar, el agente te hace preguntas una ronda tras otra, con su recomendación en cada una, hasta que el plan no tenga huecos.</p>
+  <p><mark>Este curso se diseñó así.</mark> Para un periodista es lo natural: es una entrevista.</p>
+  <pre>/plugin install mattpocock-skills@claude-plugins-official
+/mattpocock-skills:grill-me</pre>
+</section>
+
+<section class="d cian">
+  <span class="kicker">superpowers · Jesse Vincent</span>
+  <h2>Pensar antes de hacer</h2>
+  <p>Una metodología completa empaquetada en skills: lluvia de ideas → plan escrito → ejecución por pasos → verificación antes de decir «terminé».</p>
+  <p>Se activa sola al iniciar cada sesión, con un hook.</p>
+  <pre>/plugin install superpowers@claude-plugins-official</pre>
+</section>
+
+<section class="d lima">
+  <span class="kicker">ponytail · Dietrich Gebert</span>
+  <h2>El programador senior flojo</h2>
+  <p>Los agentes tienden a construir de más: librerías, archivos y capas que nadie pidió. Ponytail los obliga a buscar primero la solución más corta que funcione.</p>
+  <pre>/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail</pre>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Cuidado</span>
+  <h2>Una skill son órdenes para su agente</h2>
+  <ul>
+    <li>Un plugin con hooks <b>corre programas en su computadora</b>.</li>
+    <li>Instalen solo de fuentes que conocen.</li>
+    <li>Lean el <code>SKILL.md</code> antes de usarlo, como leerían un documento antes de citarlo.</li>
+    <li><code>/plugin</code> muestra qué tienen instalado; desinstalen lo que no usen.</li>
+  </ul>
+</section>
+
+<section class="d">
+  <span class="kicker">Proyecto propio</span>
+  <h2>¿Qué se repite en su tema?</h2>
+  <p>Descargar cada semana, limpiar nombres, cruzar dos tablas, calcular un indicador. Eso es una skill.</p>
+  <p class="nota"><b>Tarea:</b> definan su tema, consigan los datos y escriban una skill para él.</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de instalación</title>
+<meta name="description" content="Cómo instalar Git, Python, VS Code y Claude Code en Windows y Mac antes de la sesión 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="top">
+  <a class="marca" href="index.html">Agentes ✶ Periodismo</a>
+  <nav>
+    <a class="btn" href="index.html">Curso</a>
+    <a class="btn activo" href="instalacion.html">Instalación</a>
+    <a class="btn" href="index.html#temario">Presentaciones</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero" style="background:var(--cyan)">
+    <span class="sello">Sesión 0</span>
+    <h1>Instalación</h1>
+    <p class="bajada">Antes de la sesión 1 hay que tener cuatro programas funcionando: <strong>Git, Python, VS Code y Claude Code</strong>. Toma unos 30 minutos.</p>
+  </div>
+
+  <section>
+    <h2>Antes de empezar</h2>
+    <div class="caja">
+      <ul class="marcas checks">
+        <li>Una cuenta de <b>Claude Pro</b> en <a href="https://claude.ai">claude.ai</a>. Con la versión gratuita no funciona Claude Code.</li>
+        <li>Una cuenta gratuita de <b>GitHub</b> en <a href="https://github.com">github.com</a>. Usen un correo que revisen.</li>
+        <li>Permiso para instalar programas. Si es una laptop de su medio y pide una contraseña de administrador que no tienen, avisen antes de la sesión 1.</li>
+      </ul>
+      <p style="margin:16px 0 0">No necesitan saber usar la terminal. <strong>Copien y peguen los comandos</strong> con el botón «Copiar», no los escriban a mano.</p>
+    </div>
+  </section>
+
+  <div class="sistemas">
+    <a class="btn" href="#windows">Tengo Windows →</a>
+    <a class="btn" href="#mac">Tengo Mac →</a>
+  </div>
+
+  <section id="windows">
+    <h2>Windows</h2>
+    <p style="margin-top:16px">Requiere Windows 10 o posterior. Instalen en este orden.</p>
+    <ol class="pasos">
+      <li><b>Git.</b> Descarguen Git for Windows desde <a href="https://git-scm.com/downloads/win">git-scm.com/downloads/win</a> e instálenlo. Acepten todas las opciones que vienen por defecto.</li>
+      <li><b>Python.</b> Descarguen la versión más reciente desde <a href="https://www.python.org/downloads/">python.org/downloads</a>. En la primera pantalla del instalador, <strong>marquen la casilla «Add python.exe to PATH»</strong> antes de dar clic en Install.</li>
+      <li><b>VS Code.</b> Descárguenlo desde <a href="https://code.visualstudio.com">code.visualstudio.com</a> e instálenlo con las opciones por defecto.</li>
+      <li><b>Claude Code.</b> Abran el menú Inicio, escriban <code>PowerShell</code> y ábranlo. Copien este comando, péguenlo y presionen Enter:
+        <div class="comando"><pre>irm https://claude.ai/install.ps1 | iex</pre><button type="button">Copiar</button></div>
+        No muestra avance mientras descarga; esperen a que vuelva a aparecer <code>PS C:\Users\...&gt;</code>. No hace falta abrirlo como administrador.</li>
+      <li><b>Inicien sesión.</b> Cierren PowerShell, abran uno nuevo, escriban <code>claude</code> y presionen Enter. Se abre el navegador: entren con su cuenta de Claude Pro y autoricen. Para salir de Claude Code, escriban <code>/exit</code>.</li>
+    </ol>
+  </section>
+
+  <section id="mac">
+    <h2>Mac</h2>
+    <p style="margin-top:16px">Requiere macOS 13 (Ventura) o posterior. Instalen en este orden.</p>
+    <ol class="pasos">
+      <li><b>Abran la Terminal.</b> Presionen Cmd + Espacio, escriban <code>Terminal</code> y presionen Enter.</li>
+      <li><b>Git y Python.</b> Copien este comando, péguenlo en la Terminal y presionen Enter. Se abre una ventana: den clic en <b>Instalar</b> y esperen a que termine (puede tardar unos minutos).
+        <div class="comando"><pre>xcode-select --install</pre><button type="button">Copiar</button></div>
+        Si responde que ya está instalado, sigan al siguiente paso.</li>
+      <li><b>VS Code.</b> Descárguenlo desde <a href="https://code.visualstudio.com">code.visualstudio.com</a>, abran el archivo descargado y arrastren VS Code a la carpeta Aplicaciones.</li>
+      <li><b>Claude Code.</b> En la Terminal, copien este comando, péguenlo y presionen Enter:
+        <div class="comando"><pre>curl -fsSL https://claude.ai/install.sh | bash</pre><button type="button">Copiar</button></div>
+        No muestra avance mientras descarga; esperen a que la Terminal vuelva a estar lista para escribir.</li>
+      <li><b>Inicien sesión.</b> Cierren la Terminal, abran una nueva, escriban <code>claude</code> y presionen Enter. Se abre el navegador: entren con su cuenta de Claude Pro y autoricen. Para salir de Claude Code, escriban <code>/exit</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Comprobar y mandar la captura</h2>
+    <p style="margin-top:16px">Abran una terminal nueva y peguen estos comandos. Cada uno debe responder con un número de versión.</p>
+    <h3>Windows</h3>
+    <div class="comando"><pre>claude --version
+git --version
+python --version</pre><button type="button">Copiar</button></div>
+    <h3 style="margin-top:24px">Mac</h3>
+    <div class="comando"><pre>claude --version
+git --version
+python3 --version</pre><button type="button">Copiar</button></div>
+    <div class="caja lima" style="margin-top:24px">
+      <p style="margin:0"><b>Tomen una captura de pantalla donde se vean las tres respuestas y mándenla antes de la sesión 1.</b> Es el requisito para entrar.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Si algo falla</h2>
+    <table class="tabla" style="margin-top:8px">
+      <thead><tr><th>Lo que ven</th><th>Qué hacer</th></tr></thead>
+      <tbody>
+        <tr><td><code>claude</code> no se reconoce como comando</td><td>Cierren la terminal y abran una nueva. Si sigue igual, corran <code>claude doctor</code> y manden captura.</td></tr>
+        <tr><td><code>python</code> no se reconoce (Windows)</td><td>Reinstalen Python y marquen «Add python.exe to PATH».</td></tr>
+        <tr><td>El instalador pide contraseña de administrador</td><td>Es una restricción de su equipo. Avisen para buscar otra computadora.</td></tr>
+        <tr><td>Dice que su plan no incluye Claude Code</td><td>La cuenta es gratuita. Necesitan Claude Pro.</td></tr>
+        <tr><td>Cualquier otro error</td><td>Manden captura del mensaje completo y vamos a la consulta de instalación.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px"><strong>No pasen horas atorados:</strong> si en 20 minutos no avanza, manden captura.</p>
+  </section>
+</main>
+
+<footer>Primero que funcione. Luego, todo lo demás.</footer>
+<script>
+document.querySelectorAll('.comando button').forEach(b => b.onclick = () =>
+  navigator.clipboard.writeText(b.previousElementSibling.textContent).then(() => {
+    b.textContent = '¡Copiado!'; setTimeout(() => b.textContent = 'Copiar', 1500);
+  }));
+</script>
+</body>
+</html>

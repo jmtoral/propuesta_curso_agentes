@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentes para periodistas</title>
+<meta name="description" content="Curso de tecnología agéntica para periodistas: de Excel a un proyecto de datos publicado con agentes de IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="top">
+  <a class="marca" href="index.html">Agentes ✶ Periodismo</a>
+  <nav>
+    <a class="btn activo" href="index.html">Curso</a>
+    <a class="btn" href="instalacion.html">Instalación</a>
+    <a class="btn" href="#evolucion">Conceptos</a>
+    <a class="btn" href="#costos">Costos</a>
+    <a class="btn" href="#temario">Presentaciones</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <span class="sello">Grupo cerrado · 12</span>
+    <h1>De Excel a agentes</h1>
+    <p class="bajada">Un curso de tecnología agéntica para periodistas. Cada participante termina con un proyecto propio de datos, hecho con un agente de IA y <strong>publicado en una página web</strong>.</p>
+  </div>
+
+  <section>
+    <h2>Para quién es</h2>
+    <div class="datos">
+      <div class="dato"><b>12</b>periodistas, en línea y en vivo</div>
+      <div class="dato"><b>6+2</b>sesiones de 2 horas, más instalación y una opcional</div>
+      <div class="dato"><b>0</b>experiencia programando. Basta con Excel</div>
+      <div class="dato"><b>1</b>proyecto propio publicado al final</div>
+    </div>
+    <div class="caja" style="margin-top:24px">
+      <p>El curso enseña a trabajar con un agente que programa por ustedes, y sobre todo a <strong>dirigirlo, revisarlo y dudar de él</strong>.</p>
+      <p style="margin:0">El ejemplo de práctica son las versiones estenográficas de las mañaneras. Es solo el pretexto: cada concepto se aplica igual a contratos, presupuestos, cifras de seguridad o cualquier otro dato público.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Chat vs. agente</h2>
+    <div class="caja">
+      <a href="img/chat-vs-agente.svg" title="Abrir en grande"><img src="img/chat-vs-agente.svg" alt="En el chat, tú copias y pegas entre el modelo y tus archivos. En el agente, el harness pone al modelo a usar herramientas sobre tu carpeta en un bucle hasta terminar." style="width:100%;height:auto"></a>
+      <p style="margin:16px 0 0">En el chat, tú eres quien mueve los archivos. Con un agente, el <strong>harness</strong> (aquí, Claude Code) deja que el modelo lea, escriba y corra programas en tu carpeta, una y otra vez, hasta terminar el encargo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Las piezas del agente</h2>
+    <div class="caja lima">
+      <a href="img/harness.svg" title="Abrir en grande"><img src="img/harness.svg" alt="Alrededor del bucle del agente hay cuatro piezas: CLAUDE.md (reglas, sesión 3), skills (procedimientos, sesión 4), hooks (controles automáticos, sesión 5) y subagentes (ayudantes, sesión 7)." style="width:100%;height:auto;background:#fff;border:3px solid #111"></a>
+      <p style="margin:16px 0 0">El curso arma estas piezas una por sesión, siempre sobre el mismo proyecto.</p>
+    </div>
+  </section>
+
+  <section id="evolucion">
+    <h2>De prompt a harness</h2>
+    <p style="margin-top:16px">En cuatro años, la pregunta pasó de <em>«¿cómo le pido algo al modelo?»</em> a <em>«¿en qué entorno lo pongo a trabajar?»</em>. Cada etapa contiene a la anterior: no la reemplaza.</p>
+    <div class="caja">
+      <a href="img/evolucion.svg" title="Abrir en grande"><img src="img/evolucion.svg" alt="Tres cajas anidadas: prompt engineering (2022–2024) dentro de context engineering (2025), dentro de harness engineering (2026)." style="width:100%;height:auto"></a>
+    </div>
+    <div class="datos" style="margin-top:24px">
+      <div class="dato"><b>Prompt</b>2022–2024. El arte de redactar la instrucción. Útil, pero el modelo solo sabe lo que cabe en ese mensaje.</div>
+      <div class="dato"><b>Contexto</b>2025. Tobi Lütke (Shopify) y Andrej Karpathy popularizan el término: lo que importa es <em>todo</em> lo que el modelo ve, no solo la instrucción. El contexto es finito y se degrada si se llena de ruido.</div>
+      <div class="dato"><b>Harness</b>2026. Mitchell Hashimoto lo resume así: cuando el agente falla, no se reescribe el prompt, se arregla el entorno para que ese error no vuelva a pasar.</div>
+    </div>
+    <div class="caja lima" style="margin-top:24px">
+      <p style="font-family:'Archivo Black',sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);margin:0 0 .4em">Agente = Modelo + Harness</p>
+      <p>El modelo es el mismo para todos. Lo que distingue a un buen agente de uno malo es el harness: qué herramientas tiene, qué puede tocar, qué reglas lee, qué lo detiene cuando se equivoca.</p>
+      <p style="margin:0">Una forma útil de pensarlo (Birgitta Böckeler, en el sitio de Martin Fowler) son <strong>guías</strong> y <strong>sensores</strong>:</p>
+    </div>
+    <table class="tabla" style="margin-top:24px">
+      <thead><tr><th>Tipo</th><th>Qué hace</th><th>En este curso</th></tr></thead>
+      <tbody>
+        <tr><td><b>Guías</b></td><td>Orientan al agente <em>antes</em> de actuar.</td><td><code>CLAUDE.md</code>, skills, modo plan, permisos</td></tr>
+        <tr><td><b>Sensores</b></td><td>Le avisan <em>después</em> de actuar que algo salió mal, para que se corrija.</td><td>Hooks, validadores, pruebas, Git</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px">Ese es el trabajo del periodista con un agente: diseñar sus guías y sus sensores. Es oficio editorial, no programación.</p>
+  </section>
+
+  <section id="costos">
+    <h2>Cuánto cuesta</h2>
+    <p style="margin-top:16px">Los modelos cobran por <strong>tokens</strong>: pedazos de texto de unas pocas letras. Se paga lo que el modelo lee (entrada) y lo que escribe (salida). Hay dos formas de pagar:</p>
+    <div class="datos">
+      <div class="dato"><b>Plan</b>Pago fijo al mes. Claude Pro cuesta 20 dólares al mes (17 si se paga el año), e incluye Claude Code con límites de uso que se reinician. Max, desde 100 dólares, da más margen. Es lo que se usa en el curso.</div>
+      <div class="dato"><b>API</b>Pago por token, sin límite fijo. Es lo que se usa cuando un programa procesa miles de documentos solo.</div>
+    </div>
+    <table class="tabla" style="margin-top:24px">
+      <thead><tr><th>Modelo (API)</th><th>Entrada · USD por millón de tokens</th><th>Salida · USD por millón de tokens</th></tr></thead>
+      <tbody>
+        <tr><td><b>Haiku 5.5</b> · rápido y barato</td><td>$0.10</td><td>$0.50</td></tr>
+        <tr><td><b>Sonnet 5.5</b> · el de uso diario</td><td>$2</td><td>$10</td></tr>
+        <tr><td><b>Opus 5.5</b> · el más capaz de uso general</td><td>$4</td><td>$20</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:.85rem">Precios de lista de Anthropic, octubre de 2026. El procesamiento por lotes (sin prisa) cuesta la mitad. <a href="https://claude.com/pricing">claude.com/pricing</a></p>
+    <div class="caja cian" style="margin-top:24px">
+      <h3>Ejemplo con mañaneras</h3>
+      <ul class="marcas">
+        <li>Una versión estenográfica tiene unas <b>12,000 palabras</b>, alrededor de 18,000 tokens en español (aproximado).</li>
+        <li>Que Sonnet 5.5 lea una conferencia cuesta unos <b>4 centavos de dólar</b>.</li>
+        <li>Que lea las 460 conferencias del corpus: unos <b>17 dólares</b>. Con Haiku 5.5, menos de <b>1 dólar</b>. Sin contar lo que escribe de respuesta.</li>
+      </ul>
+    </div>
+    <div class="caja rosa" style="margin-top:24px">
+      <h3>Por qué un agente gasta más que un chat</h3>
+      <p>En cada vuelta del bucle, el agente vuelve a leer toda la conversación: instrucciones, archivos abiertos y resultados anteriores. Una hora de trabajo puede mover millones de tokens.</p>
+      <p style="margin:0">Por eso importan las mismas cosas que en el harness: un contexto limpio (<code>/clear</code> entre tareas), subagentes para tareas que leen mucho, y el modelo barato para el trabajo repetitivo.</p>
+    </div>
+  </section>
+
+  <section id="comunidad">
+    <h2>Skills de la comunidad</h2>
+    <p style="margin-top:16px">No todo hay que escribirlo desde cero. Hay skills publicadas por otras personas que se instalan como <strong>plugins</strong>: paquetes que pueden traer skills, comandos y hooks.</p>
+    <div class="sesiones" style="margin-top:20px">
+      <article class="sesion"><div class="num" style="font-size:1.6rem">🐴</div><div class="cuerpo">
+        <h3><a href="https://github.com/mattpocock/skills">grill-me</a> · Matt Pocock</h3>
+        <p>El agente te interroga, pregunta por pregunta, hasta que el plan no tenga huecos. Con ella se diseñó este curso.</p>
+        <div class="comando"><pre>/plugin install mattpocock-skills@claude-plugins-official</pre><button type="button">Copiar</button></div>
+        <span class="salen">Uso: /mattpocock-skills:grill-me</span>
+      </div></article>
+      <article class="sesion"><div class="num" style="font-size:1.6rem">⚡</div><div class="cuerpo">
+        <h3><a href="https://github.com/obra/superpowers">superpowers</a> · Jesse Vincent</h3>
+        <p>Una metodología completa: primero lluvia de ideas, luego plan escrito, luego ejecución por pasos con verificación. Evita que el agente se lance a hacer sin pensar.</p>
+        <div class="comando"><pre>/plugin install superpowers@claude-plugins-official</pre><button type="button">Copiar</button></div>
+        <span class="salen">Se activa sola al empezar cada sesión</span>
+      </div></article>
+      <article class="sesion"><div class="num" style="font-size:1.6rem">✂</div><div class="cuerpo">
+        <h3><a href="https://github.com/DietrichGebert/ponytail">ponytail</a> · Dietrich Gebert</h3>
+        <p>Convierte al agente en un «programador senior flojo»: la solución más corta que funcione. Contra la tendencia de los agentes a construir de más.</p>
+        <div class="comando"><pre>/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail</pre><button type="button">Copiar</button></div>
+        <span class="salen">Se activa con un hook al iniciar sesión</span>
+      </div></article>
+    </div>
+    <div class="caja" style="margin-top:24px;background:var(--yellow)">
+      <p style="margin:0"><b>Cuidado:</b> una skill son instrucciones que su agente va a seguir, y un plugin con hooks corre programas en su computadora. Instalen solo de fuentes que conocen, y lean el <code>SKILL.md</code> antes de usarlo, como leerían un documento antes de citarlo.</p>
+    </div>
+  </section>
+
+  <section id="temario">
+    <h2>Temario</h2>
+    <p style="margin-top:16px">Cada sesión gira en torno a un concepto. Da clic en el título para abrir su presentación.</p>
+    <div class="sesiones">
+      <article class="sesion"><div class="num">0</div><div class="cuerpo">
+        <h3><a href="instalacion.html">Instalación</a></h3>
+        <p class="practica">Manual para Windows y Mac, más consulta abierta para quien se atore.</p>
+        <span class="salen">Claude Code, Git, Python y VS Code funcionando</span>
+      </div></article>
+      <article class="sesion"><div class="num">1</div><div class="cuerpo">
+        <h3><a href="sesiones/1.html">Chat vs. agente</a></h3>
+        <p>Qué es un harness y cómo llegamos de prompt a context a harness engineering. Qué cuesta un agente, en tokens. Qué datos salen de su máquina.</p>
+        <p class="practica"><b>Práctica:</b> le piden lo mismo al chat y a Claude Code, y comparan.</p>
+        <span class="salen">Su primer encargo a un agente</span>
+      </div></article>
+      <article class="sesion"><div class="num">2</div><div class="cuerpo">
+        <h3><a href="sesiones/2.html">El entorno de trabajo</a></h3>
+        <p>VS Code, Git y GitHub como red de seguridad.</p>
+        <p class="practica"><b>Práctica:</b> crean un repositorio, el agente rompe algo y lo revierten.</p>
+        <span class="salen">Un repositorio propio en GitHub</span>
+      </div></article>
+      <article class="sesion"><div class="num">3</div><div class="cuerpo">
+        <h3><a href="sesiones/3.html">Darle instrucciones a un agente</a></h3>
+        <p>Cómo plantear el encargo, <code>CLAUDE.md</code> como reglas permanentes, pedir un plan antes de ejecutar.</p>
+        <p class="practica"><b>Práctica:</b> el agente descarga y ordena un mes de mañaneras siguiendo sus reglas.</p>
+        <span class="salen">Una tabla que abren en Excel</span>
+      </div></article>
+      <article class="sesion"><div class="num">4</div><div class="cuerpo">
+        <h3><a href="sesiones/4.html">Skills</a></h3>
+        <p>Empaquetar un procedimiento que se repite. Skills de la comunidad: grill-me, superpowers y ponytail.</p>
+        <p class="practica"><b>Práctica:</b> escriben una skill que cuenta quién pregunta y de qué tema.</p>
+        <span class="salen">Su primera skill</span>
+      </div></article>
+      <article class="sesion"><div class="num">5</div><div class="cuerpo">
+        <h3><a href="sesiones/5.html">Hooks, verificación y publicar</a></h3>
+        <p>Automatizar controles y aprender a dudar del agente. Publicar en GitHub Pages.</p>
+        <p class="practica"><b>Práctica:</b> un hook que valida los datos, y publican el ejemplo.</p>
+        <span class="salen">Una página web publicada</span>
+      </div></article>
+      <article class="sesion"><div class="num">6</div><div class="cuerpo">
+        <h3><a href="sesiones/6.html">Presentación final</a></h3>
+        <p>Cada quien muestra su proyecto, solo entre el grupo.</p>
+        <p class="practica"><b>Práctica:</b> su tema, con datos públicos.</p>
+        <span class="salen">Su proyecto propio, publicado</span>
+      </div></article>
+      <article class="sesion opcional"><div class="num">7</div><div class="cuerpo">
+        <h3><a href="sesiones/7.html">Orquestación y subagentes</a><span class="etiqueta">Opcional</span></h3>
+        <p>Repartir trabajo en paralelo y separar roles.</p>
+        <p class="practica"><b>Práctica:</b> un orquestador extrae 5 afirmaciones de una conferencia; un subagente verifica cada una y un subagente editor revisa lo que trajeron.</p>
+        <span class="salen">Una tabla de lo verificado, lo falso y lo que no se pudo verificar</span>
+      </div></article>
+    </div>
+    <p style="margin-top:20px">El proyecto propio se elige entre las sesiones 3 y 4, y se trabaja entre sesiones con acompañamiento.</p>
+  </section>
+
+  <section>
+    <h2>Requisitos</h2>
+    <div class="caja cian">
+      <ul class="marcas">
+        <li>Su propia computadora, Windows o Mac, con permiso para instalar programas.</li>
+        <li>Una cuenta de Claude Pro a su nombre.</li>
+        <li>Una cuenta gratuita de GitHub.</li>
+        <li>Seguir el <a href="instalacion.html">manual de instalación</a> y mandar la captura con <code>claude --version</code>, <code>git --version</code> y <code>python --version</code> antes de la sesión 1.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Formato</h2>
+    <div class="datos">
+      <div class="dato"><b>1×</b>sesión por semana, en vivo. Día y hora por formulario</div>
+      <div class="dato"><b>REC</b>Grabadas y compartidas solo con el grupo</div>
+      <div class="dato"><b>?!</b>Acompañamiento abierto entre sesiones</div>
+      <div class="dato"><b>🔒</b>Presentación final solo entre el grupo</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reglas sobre datos</h2>
+    <div class="caja rosa">
+      <p><strong style="background:#fff">Solo datos públicos.</strong> En el curso y en el proyecto final.</p>
+      <p style="margin:0">Lo que se le da a un agente sale de su computadora. La sesión 1 dedica un bloque a qué información sale, cómo revisar la privacidad de su cuenta y cuándo no usar el agente.</p>
+    </div>
+  </section>
+</main>
+
+<footer>El agente encuentra; el periodista decide.</footer>
+<script>
+document.querySelectorAll('.comando button').forEach(b => b.onclick = () =>
+  navigator.clipboard.writeText(b.previousElementSibling.textContent).then(() => {
+    b.textContent = '¡Copiado!'; setTimeout(() => b.textContent = 'Copiar', 1500);
+  }));
+</script>
+</body>
+</html>

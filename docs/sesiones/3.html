@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 3 · Darle instrucciones a un agente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d lima">
+  <span class="kicker">Sesión 3 de 6</span>
+  <h1>Instrucciones</h1>
+  <p>Cómo encargarle trabajo a un agente, y cómo hacer que recuerde las reglas.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">Idea central</span>
+  <p class="enorme">Encargarle a un agente es como encargarle a un <mark>becario muy rápido</mark> que no conoce su redacción.</p>
+</section>
+
+<section class="d cian">
+  <span class="kicker">Anatomía de un buen encargo</span>
+  <div class="cajas">
+    <div class="caja"><b>Objetivo</b>Qué quieren tener al final.</div>
+    <div class="caja"><b>Contexto</b>De dónde salen los datos y para qué sirven.</div>
+    <div class="caja"><b>Restricciones</b>Qué no debe hacer.</div>
+    <div class="caja"><b>Terminado</b>Cómo sabrán que quedó bien.</div>
+  </div>
+</section>
+
+<section class="d">
+  <span class="kicker">Antes y después</span>
+  <div class="dos">
+    <div><h2>✗</h2><pre>analiza las mañaneras</pre></div>
+    <div><h2>✓</h2><pre>Descarga las versiones estenográficas
+de las mañaneras de septiembre
+desde gob.mx/presidencia.
+Sepáralas en turnos de habla.
+Guarda un CSV con: fecha, hablante,
+texto. No borres los HTML originales.
+Termina cuando el CSV abra en Excel
+y tenga una fila por turno.</pre></div>
+  </div>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Plan antes de ejecutar</span>
+  <h2>Modo plan</h2>
+  <ul>
+    <li><code>Shift + Tab</code> hasta ver <b>plan mode</b>. El agente investiga y propone, pero no toca nada.</li>
+    <li>Lean el plan como editores: ¿falta algo?, ¿asume algo falso?</li>
+    <li>Corrijan el plan. Solo entonces lo dejan ejecutar.</li>
+  </ul>
+</section>
+
+<section class="d">
+  <span class="kicker">Reglas permanentes</span>
+  <h2><code>CLAUDE.md</code></h2>
+  <ul>
+    <li>Un archivo de texto en la raíz del proyecto. Claude Code lo lee al empezar cada sesión.</li>
+    <li>Ahí van las reglas que no quieren repetir: de dónde salen los datos, qué nunca borrar, cómo nombrar archivos.</li>
+    <li><code>/init</code> genera un primer borrador. Ustedes lo corrigen.</li>
+  </ul>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Ejemplo</span>
+  <pre># Mañaneras
+
+Contamos quién pregunta en las mañaneras y de qué tema.
+
+## Reglas
+- Los HTML descargados van en data/raw/ y nunca se modifican.
+- Los resultados van en data/outputs/ como CSV.
+- Si un turno no se puede atribuir a alguien, se marca
+  "sin identificar". Nunca se adivina.
+- Antes de cambiar algo grande, propón un plan.</pre>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Práctica · 45 min</span>
+  <h2>Un mes de mañaneras</h2>
+  <ol>
+    <li>Escriban su <code>CLAUDE.md</code> con el agente.</li>
+    <li>En modo plan, encarguen descargar un mes y separarlo en turnos.</li>
+    <li>Revisen y corrijan el plan. Ejecuten.</li>
+    <li>Abran el CSV en Excel.</li>
+    <li>Commit.</li>
+  </ol>
+</section>
+
+<section class="d">
+  <span class="kicker">Revisen</span>
+  <h2>No le crean todavía</h2>
+  <ul>
+    <li>Elijan 5 filas al azar y compárenlas con la versión original en gob.mx.</li>
+    <li>¿Cuadra el número de conferencias con el calendario del mes?</li>
+    <li>Busquen hablantes raros: errores de dedo, nombres partidos.</li>
+  </ul>
+</section>
+
+<section class="d cian">
+  <span class="kicker">El contexto se llena</span>
+  <ul>
+    <li>Conversaciones muy largas hacen que el agente olvide o se confunda.</li>
+    <li><code>/clear</code> empieza de cero entre tareas distintas. Lo importante ya vive en <code>CLAUDE.md</code>.</li>
+    <li><code>/compact</code> resume la conversación cuando necesitan continuar.</li>
+  </ul>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Proyecto propio</span>
+  <h2>Elijan tema</h2>
+  <div class="cajas">
+    <div class="caja"><b>Público</b>Datos que cualquiera puede consultar.</div>
+    <div class="caja"><b>Descargable</b>Un sitio, un CSV, un portal de transparencia.</div>
+    <div class="caja"><b>Una pregunta</b>Que quepa en una oración.</div>
+    <div class="caja"><b>Pequeño</b>Que se pueda terminar en tres semanas.</div>
+  </div>
+  <p class="nota" style="margin-top:28px"><b>Tarea:</b> traigan dos ideas a la sesión 4.</p>
+</section>
+</body>
+</html>

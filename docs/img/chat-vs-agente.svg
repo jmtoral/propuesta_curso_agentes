@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img" aria-label="En el chat tú mueves los archivos; en el agente, el harness lo hace en un bucle">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+  </defs>
+  <style>
+    .t { font: 900 26px "Arial Black", Impact, sans-serif; fill: #111; }
+    .b { font: 700 18px Arial, sans-serif; fill: #111; }
+    .s { font: 15px Arial, sans-serif; fill: #111; }
+    .l { stroke: #111; stroke-width: 4; fill: none; marker-end: url(#f); }
+  </style>
+
+  <!-- CHAT -->
+  <text class="t" x="40" y="48">CHAT</text>
+  <rect x="46" y="96" width="160" height="64" fill="#111"/><rect x="40" y="90" width="160" height="64" fill="#ffd60a" stroke="#111" stroke-width="4"/>
+  <text class="b" x="120" y="128" text-anchor="middle">Tú</text>
+  <rect x="46" y="316" width="160" height="64" fill="#111"/><rect x="40" y="310" width="160" height="64" fill="#4cc9f0" stroke="#111" stroke-width="4"/>
+  <text class="b" x="120" y="348" text-anchor="middle">Modelo</text>
+  <path class="l" d="M95 158V300"/><path class="l" d="M145 306V164"/>
+  <text class="s" x="88" y="236" text-anchor="end">pregunta</text>
+  <text class="s" x="152" y="236">respuesta</text>
+  <rect x="250" y="190" width="160" height="70" fill="#fff" stroke="#111" stroke-width="4" stroke-dasharray="10 6"/>
+  <text class="b" x="330" y="222" text-anchor="middle">Tus archivos</text>
+  <text class="s" x="330" y="244" text-anchor="middle">Excel, PDF, CSV</text>
+  <path class="l" d="M204 140L282 184"/>
+  <text class="s" x="250" y="132">copias y pegas</text>
+  <text class="s" x="250" y="150">a mano</text>
+
+  <line x1="450" y1="20" x2="450" y2="450" stroke="#111" stroke-width="4" stroke-dasharray="4 10"/>
+
+  <!-- AGENTE -->
+  <text class="t" x="490" y="48">AGENTE</text>
+  <rect x="566" y="76" width="160" height="56" fill="#111"/><rect x="560" y="70" width="160" height="56" fill="#ffd60a" stroke="#111" stroke-width="4"/>
+  <text class="b" x="640" y="104" text-anchor="middle">Tú</text>
+  <path class="l" d="M640 128V176"/>
+  <text class="s" x="650" y="158">encargo</text>
+  <rect x="496" y="196" width="384" height="250" fill="#111"/><rect x="490" y="190" width="384" height="250" fill="#ff6b9d" stroke="#111" stroke-width="4"/>
+  <text class="b" x="506" y="218">HARNESS · Claude Code</text>
+  <rect x="510" y="260" width="150" height="70" fill="#4cc9f0" stroke="#111" stroke-width="4"/>
+  <text class="b" x="585" y="300" text-anchor="middle">Modelo</text>
+  <rect x="704" y="260" width="150" height="70" fill="#b8f35a" stroke="#111" stroke-width="4"/>
+  <text class="b" x="779" y="292" text-anchor="middle">Herramientas</text>
+  <text class="s" x="779" y="314" text-anchor="middle">leer · escribir · correr</text>
+  <path class="l" d="M600 256Q682 226 764 254"/>
+  <path class="l" d="M764 334Q682 366 600 336"/>
+  <text class="s" x="682" y="236" text-anchor="middle">pide una acción</text>
+  <text class="s" x="682" y="378" text-anchor="middle">ve el resultado</text>
+  <text class="b" x="682" y="420" text-anchor="middle">…y repite hasta terminar</text>
+</svg>

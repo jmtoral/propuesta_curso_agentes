@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 2 · El entorno de trabajo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d cian">
+  <span class="kicker">Sesión 2 de 6</span>
+  <h1>El entorno de trabajo</h1>
+  <p>VS Code, Git y GitHub: la red de seguridad.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">El problema</span>
+  <p class="enorme">El agente se va a equivocar. <mark>La pregunta es si pueden deshacerlo.</mark></p>
+</section>
+
+<section class="d">
+  <span class="kicker">El flujo</span>
+  <div class="diagrama"><img src="../img/git.svg" alt="Tu carpeta, commit, historial, push, GitHub, Pages, tu página pública. Desde el historial se puede volver a una versión anterior."></div>
+</section>
+
+<section class="d lima">
+  <span class="kicker">Vocabulario</span>
+  <h2>Git en cinco palabras</h2>
+  <div class="cajas">
+    <div class="caja"><b>Repositorio</b>Una carpeta con memoria de cada versión.</div>
+    <div class="caja"><b>Commit</b>Guardar una versión con una nota de qué cambió.</div>
+    <div class="caja"><b>Push</b>Subir esas versiones a GitHub.</div>
+    <div class="caja"><b>GitHub</b>La copia en la nube. También publica páginas web.</div>
+    <div class="caja"><b>Revertir</b>Volver a una versión anterior.</div>
+  </div>
+</section>
+
+<section class="d">
+  <span class="kicker">VS Code</span>
+  <h2>Un solo lugar para todo</h2>
+  <ul>
+    <li><b>Explorador:</b> los archivos de la carpeta, a la izquierda.</li>
+    <li><b>Editor:</b> abren cualquier archivo y ven qué escribió el agente.</li>
+    <li><b>Terminal integrada:</b> donde corre <code>claude</code>. Menú Terminal → Nueva terminal.</li>
+    <li><b>Control de código fuente:</b> el ícono de ramas. Muestra qué cambió desde el último commit, línea por línea.</li>
+  </ul>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Práctica · 25 min</span>
+  <h2>Su primer repositorio</h2>
+  <ol>
+    <li>Creen una carpeta <code>mananeras</code> y ábranla en VS Code (Archivo → Abrir carpeta).</li>
+    <li>En la terminal, abran <code>claude</code> y pídanle: <mark>«inicializa un repositorio de Git aquí y haz el primer commit»</mark>.</li>
+    <li>En Control de código fuente, den clic en <b>Publish to GitHub</b> y elijan repositorio privado.</li>
+  </ol>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Práctica · 20 min</span>
+  <h2>Ahora, rómpanlo</h2>
+  <ol>
+    <li>Pídanle al agente que borre o cambie un archivo.</li>
+    <li>Vean en Control de código fuente qué cambió exactamente.</li>
+    <li>Deshagan el cambio: descarten los cambios en VS Code, o pídanle a Claude «regresa todo al último commit».</li>
+  </ol>
+  <p class="nota">Claude Code también guarda puntos de control propios: <code>Esc</code> dos veces para volver atrás en la conversación.</p>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Regla</span>
+  <p class="enorme">Commit antes de cada encargo grande.</p>
+  <p>Si algo sale mal, siempre hay a dónde regresar.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">Para la próxima</span>
+  <h2>Tarea</h2>
+  <ul>
+    <li>Hagan tres commits más, cada uno con una nota clara de qué cambió.</li>
+    <li>Revisen su repositorio en github.com y encuentren el historial de commits.</li>
+  </ul>
+</section>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 1 · Chat vs. agente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d amarillo">
+  <span class="kicker">Sesión 1 de 6</span>
+  <h1>Chat vs. agente</h1>
+  <p>Qué cambia cuando la IA puede tocar tus archivos.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">La pregunta de hoy</span>
+  <p class="enorme">Ya usan ChatGPT o Claude. <mark>¿Para qué otra cosa?</mark></p>
+</section>
+
+<section class="d">
+  <span class="kicker">La diferencia</span>
+  <div class="diagrama"><img src="../img/chat-vs-agente.svg" alt="En el chat tú copias y pegas entre el modelo y tus archivos. En el agente, el harness deja que el modelo use herramientas sobre tu carpeta en un bucle."></div>
+</section>
+
+<section class="d cian">
+  <span class="kicker">Vocabulario</span>
+  <h2>Cuatro palabras</h2>
+  <div class="cajas">
+    <div class="caja"><b>Modelo</b>El que piensa y escribe. Aquí, Claude.</div>
+    <div class="caja"><b>Harness</b>El programa que le da manos al modelo. Aquí, Claude Code.</div>
+    <div class="caja"><b>Herramientas</b>Leer y escribir archivos, correr programas, buscar en la web.</div>
+    <div class="caja"><b>Contexto</b>Todo lo que el modelo tiene a la vista en este momento. Tiene límite y se llena.</div>
+  </div>
+</section>
+
+<section class="d negro">
+  <span class="kicker">La fórmula</span>
+  <p class="enorme">Agente = Modelo + <mark>Harness</mark></p>
+  <p>El modelo es el mismo para todos. El harness es lo que ustedes diseñan.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">Cómo llegamos aquí</span>
+  <div class="diagrama"><img src="../img/evolucion.svg" alt="Prompt engineering (2022–2024) dentro de context engineering (2025), dentro de harness engineering (2026)."></div>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">2022–2024</span>
+  <h2>Prompt engineering</h2>
+  <p>La era de las «fórmulas mágicas»: «actúa como experto», «piensa paso a paso», ejemplos en el mensaje.</p>
+  <p>Sirvió, pero tenía un techo: el modelo solo sabía lo que cupiera en ese mensaje, y la respuesta acababa en un copiar y pegar.</p>
+</section>
+
+<section class="d cian">
+  <span class="kicker">2025</span>
+  <h2>Context engineering</h2>
+  <p>Tobi Lütke (Shopify) y Andrej Karpathy popularizan la idea: lo que importa no es la frase, sino <mark>todo lo que el modelo tiene a la vista</mark>.</p>
+  <ul>
+    <li>Documentos, historial, resultados de herramientas, memoria.</li>
+    <li>El contexto es finito: si se llena de ruido, el modelo empeora.</li>
+    <li>El trabajo pasa a ser decidir qué entra y qué se queda fuera.</li>
+  </ul>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">2026</span>
+  <h2>Harness engineering</h2>
+  <p>Mitchell Hashimoto lo describe así: cuando el agente comete un error, no reescribes el prompt. <mark>Arreglas el entorno</mark> para que ese error no vuelva a ocurrir.</p>
+  <p>Herramientas, permisos, reglas, controles automáticos, una forma de deshacer. El modelo es una pieza; el sistema es el producto.</p>
+</section>
+
+<section class="d lima">
+  <span class="kicker">Guías y sensores</span>
+  <div class="dos">
+    <div class="caja"><b>Guías</b>Orientan <b>antes</b> de actuar.<br><code>CLAUDE.md</code>, skills, modo plan, permisos.</div>
+    <div class="caja"><b>Sensores</b>Avisan <b>después</b> de actuar, para corregir.<br>Hooks, validadores, pruebas, Git.</div>
+  </div>
+  <p class="nota" style="margin-top:28px">Clasificación de Birgitta Böckeler (martinfowler.com). Es oficio editorial: definir qué se pide y cómo se revisa.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">Costos · 1</span>
+  <h2>Todo se cobra en tokens</h2>
+  <ul>
+    <li>Un token es un pedazo de texto de unas pocas letras.</li>
+    <li>Se paga lo que el modelo <b>lee</b> (entrada) y lo que <b>escribe</b> (salida). Escribir cuesta 5 veces más.</li>
+    <li><b>Plan:</b> Claude Pro, 20 dólares al mes, con límites de uso que se reinician. Es lo que usamos.</li>
+    <li><b>API:</b> pago por token, para programas que procesan miles de documentos solos.</li>
+  </ul>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Costos · 2 · precios API, oct. 2026</span>
+  <div class="cajas">
+    <div class="caja"><b>Haiku 5.5</b>$0.10 entrada<br>$0.50 salida<br>por millón de tokens</div>
+    <div class="caja"><b>Sonnet 5.5</b>$2 entrada<br>$10 salida<br>por millón de tokens</div>
+    <div class="caja"><b>Opus 5.5</b>$4 entrada<br>$20 salida<br>por millón de tokens</div>
+  </div>
+  <p class="nota" style="margin-top:28px">Una mañanera: unas 12,000 palabras, unos 18,000 tokens. Que Sonnet 5.5 la lea cuesta unos 4 centavos de dólar. Las 460 del corpus, unos 17 dólares; con Haiku 5.5, menos de 1.</p>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Costos · 3</span>
+  <h2>Por qué un agente gasta más</h2>
+  <p>En cada vuelta del bucle, el agente <mark>vuelve a leer toda la conversación</mark>. Una hora de trabajo puede mover millones de tokens.</p>
+  <ul>
+    <li><code>/clear</code> entre tareas distintas.</li>
+    <li>Subagentes para lo que lee mucho.</li>
+    <li>El modelo barato para lo repetitivo.</li>
+  </ul>
+</section>
+
+<section class="d">
+  <span class="kicker">Quién manda</span>
+  <h2>El agente pide permiso</h2>
+  <ul>
+    <li>Antes de editar un archivo o correr un comando, Claude Code pregunta. Ustedes aprueban o rechazan.</li>
+    <li>Con <code>Shift + Tab</code> cambian de modo: pedir permiso en todo, aceptar ediciones o <b>modo plan</b> (solo propone, no toca nada).</li>
+    <li>Siempre lo abren <b>dentro de la carpeta del proyecto</b>, nunca en todo el disco.</li>
+  </ul>
+</section>
+
+<section class="d lima">
+  <span class="kicker">Práctica · 30 min</span>
+  <h2>El mismo encargo, dos veces</h2>
+  <p>Tienen una carpeta con 3 versiones estenográficas de mañaneras. El encargo: <mark>¿cuántas preguntas hizo la prensa en cada conferencia?</mark></p>
+  <div class="dos">
+    <div class="caja"><b>En el chat</b>Copien y peguen el texto de cada conferencia.</div>
+    <div class="caja"><b>En Claude Code</b>Abran la terminal en la carpeta, escriban <code>claude</code> y pídanlo.</div>
+  </div>
+</section>
+
+<section class="d">
+  <span class="kicker">Comparen</span>
+  <h2>Tres preguntas</h2>
+  <ol>
+    <li>¿Quién movió los archivos?</li>
+    <li>¿Pueden repetirlo mañana con 30 conferencias más?</li>
+    <li>¿Pueden revisar <b>cómo</b> llegó al número?</li>
+  </ol>
+  <p class="nota">El agente deja un programa que pueden volver a correr y revisar. El chat solo deja una respuesta.</p>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Datos sensibles</span>
+  <h2>Qué sale de su máquina</h2>
+  <ul>
+    <li>Todo lo que el agente lee viaja a los servidores de Anthropic para procesarse. Eso incluye los archivos que abre, no solo lo que ustedes escriben.</li>
+    <li>En claude.ai → Configuración → Privacidad deciden si sus conversaciones se usan para mejorar los modelos. Revísenlo hoy.</li>
+    <li>Lo que no está en la carpeta, el agente no lo ve. Por eso cada proyecto vive en su propia carpeta.</li>
+  </ul>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Cuándo no</span>
+  <h2>No usen el agente con…</h2>
+  <div class="cajas">
+    <div class="caja"><b>Fuentes</b>Nombres, contactos o mensajes de fuentes protegidas.</div>
+    <div class="caja"><b>Filtraciones</b>Documentos que no son públicos.</div>
+    <div class="caja"><b>Datos personales</b>De personas que no son figuras públicas.</div>
+  </div>
+  <p class="nota" style="margin-top:28px"><b>Regla del curso:</b> solo datos públicos, en las prácticas y en el proyecto final.</p>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Para la próxima</span>
+  <h2>Tarea</h2>
+  <ul>
+    <li>Repitan el ejercicio con una conferencia distinta.</li>
+    <li>Pídanle a Claude Code que les explique, en español sencillo, el programa que escribió.</li>
+    <li>Empiecen a pensar en un tema de datos públicos para su proyecto.</li>
+  </ul>
+</section>
+</body>
+</html>

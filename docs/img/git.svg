@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-label="De tu carpeta a una página pública: commit, push y GitHub Pages">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+  </defs>
+  <style>
+    .b { font: 900 18px "Arial Black", Impact, sans-serif; fill: #111; }
+    .s { font: 14px Arial, sans-serif; fill: #111; }
+    .e { font: 700 14px "Courier New", monospace; fill: #111; }
+    .l { stroke: #111; stroke-width: 4; fill: none; marker-end: url(#g); }
+  </style>
+  <rect x="26" y="66" width="180" height="90" fill="#111"/><rect x="20" y="60" width="180" height="90" fill="#ffd60a" stroke="#111" stroke-width="4"/>
+  <text class="b" x="110" y="100" text-anchor="middle">TU CARPETA</text><text class="s" x="110" y="124" text-anchor="middle">donde trabaja el agente</text>
+  <rect x="252" y="66" width="180" height="90" fill="#111"/><rect x="246" y="60" width="180" height="90" fill="#4cc9f0" stroke="#111" stroke-width="4"/>
+  <text class="b" x="336" y="100" text-anchor="middle">HISTORIAL</text><text class="s" x="336" y="124" text-anchor="middle">cada versión guardada</text>
+  <rect x="478" y="66" width="180" height="90" fill="#111"/><rect x="472" y="60" width="180" height="90" fill="#b8f35a" stroke="#111" stroke-width="4"/>
+  <text class="b" x="562" y="100" text-anchor="middle">GITHUB</text><text class="s" x="562" y="124" text-anchor="middle">copia en la nube</text>
+  <rect x="704" y="66" width="180" height="90" fill="#111"/><rect x="698" y="60" width="180" height="90" fill="#ff6b9d" stroke="#111" stroke-width="4"/>
+  <text class="b" x="788" y="100" text-anchor="middle">TU PÁGINA</text><text class="s" x="788" y="124" text-anchor="middle">pública en internet</text>
+
+  <path class="l" d="M200 105H240"/><path class="l" d="M426 105H466"/><path class="l" d="M652 105H692"/>
+  <text class="e" x="223" y="44" text-anchor="middle">commit</text>
+  <text class="e" x="449" y="44" text-anchor="middle">push</text>
+  <text class="e" x="675" y="44" text-anchor="middle">Pages</text>
+
+  <path class="l" d="M336 154V210H110V158"/>
+  <text class="s" x="223" y="236" text-anchor="middle">si el agente rompe algo, vuelves a una versión anterior</text>
+</svg>

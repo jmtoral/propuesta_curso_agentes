@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Cuatro piezas configuran al agente: CLAUDE.md, skills, hooks y subagentes">
+  <style>
+    .t { font: 900 22px "Arial Black", Impact, sans-serif; fill: #111; }
+    .b { font: 700 17px Arial, sans-serif; fill: #111; }
+    .s { font: 15px Arial, sans-serif; fill: #111; }
+    .k { font: 700 12px Arial, sans-serif; fill: #fffbea; }
+    .c { stroke: #111; stroke-width: 4; }
+  </style>
+  <line class="c" x1="300" y1="120" x2="360" y2="200"/>
+  <line class="c" x1="600" y1="120" x2="540" y2="200"/>
+  <line class="c" x1="300" y1="380" x2="360" y2="300"/>
+  <line class="c" x1="600" y1="380" x2="540" y2="300"/>
+
+  <rect x="338" y="198" width="240" height="110" fill="#111"/><rect x="330" y="190" width="240" height="110" fill="#ffd60a" stroke="#111" stroke-width="4"/>
+  <text class="t" x="450" y="236" text-anchor="middle">EL BUCLE</text>
+  <text class="s" x="450" y="262" text-anchor="middle">modelo + herramientas</text>
+  <text class="s" x="450" y="282" text-anchor="middle">trabajando en tu carpeta</text>
+
+  <g>
+    <rect x="46" y="46" width="260" height="104" fill="#111"/><rect x="40" y="40" width="260" height="104" fill="#4cc9f0" stroke="#111" stroke-width="4"/>
+    <text class="t" x="56" y="74">CLAUDE.md</text>
+    <text class="s" x="56" y="100">Reglas del proyecto que</text>
+    <text class="s" x="56" y="120">lee al empezar cada sesión</text>
+    <rect x="226" y="28" width="62" height="20" fill="#111"/><text class="k" x="257" y="43" text-anchor="middle">SESIÓN 3</text>
+  </g>
+  <g>
+    <rect x="606" y="46" width="260" height="104" fill="#111"/><rect x="600" y="40" width="260" height="104" fill="#b8f35a" stroke="#111" stroke-width="4"/>
+    <text class="t" x="616" y="74">SKILLS</text>
+    <text class="s" x="616" y="100">Procedimientos empaquetados</text>
+    <text class="s" x="616" y="120">que carga cuando hacen falta</text>
+    <rect x="786" y="28" width="62" height="20" fill="#111"/><text class="k" x="817" y="43" text-anchor="middle">SESIÓN 4</text>
+  </g>
+  <g>
+    <rect x="46" y="356" width="260" height="104" fill="#111"/><rect x="40" y="350" width="260" height="104" fill="#ff6b9d" stroke="#111" stroke-width="4"/>
+    <text class="t" x="56" y="384">HOOKS</text>
+    <text class="s" x="56" y="410">Controles automáticos que</text>
+    <text class="s" x="56" y="430">corren en momentos fijos</text>
+    <rect x="226" y="338" width="62" height="20" fill="#111"/><text class="k" x="257" y="353" text-anchor="middle">SESIÓN 5</text>
+  </g>
+  <g>
+    <rect x="606" y="356" width="260" height="104" fill="#111"/><rect x="600" y="350" width="260" height="104" fill="#ff9f1c" stroke="#111" stroke-width="4"/>
+    <text class="t" x="616" y="384">SUBAGENTES</text>
+    <text class="s" x="616" y="410">Ayudantes con su propio</text>
+    <text class="s" x="616" y="430">contexto y una sola tarea</text>
+    <rect x="786" y="338" width="62" height="20" fill="#111"/><text class="k" x="817" y="353" text-anchor="middle">SESIÓN 7</text>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 5 · Hooks, verificación y publicar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d naranja">
+  <span class="kicker">Sesión 5 de 6</span>
+  <h1>Dudar y publicar</h1>
+  <p>Hooks, verificación y GitHub Pages.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">El problema</span>
+  <p class="enorme">El agente se equivoca <mark>con total seguridad</mark>.</p>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Errores típicos</span>
+  <div class="cajas">
+    <div class="caja"><b>Dice «listo»</b>sin haber corrido el programa.</div>
+    <div class="caja"><b>Cuenta mal</b>porque se saltó filas que no entendió.</div>
+    <div class="caja"><b>Rellena</b>lo que falta con algo que suena verosímil.</div>
+    <div class="caja"><b>Cambia</b>el formato de un archivo que otro paso necesita.</div>
+  </div>
+</section>
+
+<section class="d">
+  <span class="kicker">Verificar a mano</span>
+  <h2>El oficio de siempre</h2>
+  <ul>
+    <li><b>Muestreo:</b> filas al azar contra la fuente original.</li>
+    <li><b>Totales:</b> ¿la suma de las partes da el total?</li>
+    <li><b>Límites:</b> ¿hay fechas fuera del periodo, valores negativos, nombres vacíos?</li>
+  </ul>
+  <p class="nota">Lo que revisan siempre igual se puede automatizar.</p>
+</section>
+
+<section class="d cian">
+  <span class="kicker">Hooks</span>
+  <h2>Controles que corren solos</h2>
+  <ul>
+    <li>Un hook es un comando que Claude Code corre en un momento fijo, sin que nadie lo pida.</li>
+    <li>Momentos útiles: antes de usar una herramienta, después de editar un archivo, y <b>cuando el agente dice que terminó</b>.</li>
+    <li>Se configuran en <code>.claude/settings.json</code>, o con el menú <code>/hooks</code>.</li>
+  </ul>
+</section>
+
+<section class="d negro">
+  <span class="kicker">La diferencia</span>
+  <p class="enorme"><code style="font-size:.6em">CLAUDE.md</code> pide. <mark>El hook obliga.</mark></p>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Ejemplo · .claude/settings.json</span>
+  <pre>{
+  "hooks": {
+    "Stop": [
+      { "hooks": [
+        { "type": "command", "command": "python validar.py" }
+      ] }
+    ]
+  }
+}</pre>
+  <p class="nota">Cada vez que el agente diga «terminé», corre <code>validar.py</code>. Si el programa sale con código 2, el agente no puede terminar: recibe el error y tiene que arreglarlo.</p>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">Práctica · 30 min</span>
+  <h2>Su validador</h2>
+  <ol>
+    <li>Pídanle al agente un <code>validar.py</code> que revise el CSV: sin filas vacías, fechas dentro del mes, al menos un turno por conferencia.</li>
+    <li>Configuren el hook <code>Stop</code>.</li>
+    <li>Rompan el CSV a propósito y pídanle cualquier cosa al agente. ¿Lo detuvo el hook?</li>
+  </ol>
+</section>
+
+<section class="d">
+  <span class="kicker">Publicar</span>
+  <div class="diagrama"><img src="../img/git.svg" alt="Tu carpeta, commit, historial, push, GitHub, Pages, tu página pública."></div>
+</section>
+
+<section class="d lima">
+  <span class="kicker">Práctica · 30 min</span>
+  <h2>GitHub Pages</h2>
+  <ol>
+    <li>Pídanle al agente una página <code>docs/index.html</code> con sus tablas y una gráfica.</li>
+    <li>Commit y push.</li>
+    <li>En GitHub: Settings → Pages → Deploy from a branch → <code>main</code> y carpeta <code>/docs</code>.</li>
+    <li>En un par de minutos su página está en <code>usuario.github.io/mananeras</code>.</li>
+  </ol>
+  <p class="nota">Lo publicado es público. Solo datos públicos.</p>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Para la sesión 6</span>
+  <h2>Tarea</h2>
+  <ul>
+    <li>Proyecto propio con su validador y su página publicada.</li>
+    <li>Preparen unos 7 minutos para presentarlo.</li>
+  </ul>
+</section>
+</body>
+</html>

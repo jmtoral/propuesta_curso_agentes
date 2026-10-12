@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 7 · Orquestación y subagentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diapos.css">
+</head>
+<body>
+<a class="salir" href="../index.html#temario">← Temario</a>
+
+<section class="d naranja">
+  <span class="kicker">Sesión 7 · opcional</span>
+  <h1>Orquestación</h1>
+  <p>Un agente que dirige a otros agentes.</p>
+</section>
+
+<section class="d">
+  <span class="kicker">Por qué</span>
+  <h2>Tres razones para usar subagentes</h2>
+  <div class="cajas">
+    <div class="caja"><b>Contexto propio</b>Cada uno trabaja aparte y solo entrega su resultado. El agente principal no se satura.</div>
+    <div class="caja"><b>En paralelo</b>Cinco tareas a la vez en lugar de una tras otra.</div>
+    <div class="caja"><b>Roles</b>Uno hace, otro revisa. Como reportero y editor.</div>
+  </div>
+</section>
+
+<section class="d">
+  <span class="kicker">El ejercicio</span>
+  <div class="diagrama"><img src="../img/orquestacion.svg" alt="El orquestador extrae cinco afirmaciones, cinco verificadores trabajan en paralelo, un editor revisa sus fuentes, sale una tabla y tú decides."></div>
+</section>
+
+<section class="d negro">
+  <span class="kicker">.claude/agents/verificador.md</span>
+  <pre>---
+name: verificador
+description: Verifica UNA afirmación contra fuentes
+  públicas. Úsalo con una afirmación con cifra o fecha.
+tools: WebSearch, WebFetch
+---
+
+Recibes una afirmación. Busca fuentes oficiales o
+periodísticas que la confirmen o la contradigan.
+Devuelve: veredicto (verificado / falso / sin verificar),
+la cita textual de la fuente y su enlace.
+Si no encuentras fuente, di "sin verificar". Nunca supongas.</pre>
+</section>
+
+<section class="d negro">
+  <span class="kicker">.claude/agents/editor.md</span>
+  <pre>---
+name: editor
+description: Revisa el trabajo de los verificadores.
+tools: WebFetch
+---
+
+Para cada veredicto, abre el enlace y comprueba que la
+cita existe y dice lo que el verificador afirma.
+Si no coincide, cambia el veredicto a "sin verificar"
+y explica por qué.</pre>
+</section>
+
+<section class="d amarillo">
+  <span class="kicker">El encargo al orquestador</span>
+  <pre>Lee la conferencia del 15 de septiembre.
+Extrae 5 afirmaciones verificables con cifra o fecha.
+Lanza un subagente verificador por afirmación,
+en paralelo. Pasa sus resultados al editor.
+Arma una tabla: afirmación, veredicto, fuente, enlace.</pre>
+</section>
+
+<section class="d rosa">
+  <span class="kicker">Práctica · 50 min</span>
+  <ol>
+    <li>Creen los dos subagentes con <code>/agents</code> o pidiéndoselo a Claude.</li>
+    <li>Den el encargo al orquestador.</li>
+    <li>Abran cada enlace de la tabla. ¿El editor atrapó algo?</li>
+  </ol>
+</section>
+
+<section class="d cian">
+  <span class="kicker">Cuidado</span>
+  <ul>
+    <li><b>Consumo:</b> varios subagentes a la vez agotan rápido el límite de uso de Claude Pro. Empiecen con 5 afirmaciones.</li>
+    <li><b>Fuentes:</b> un agente puede citar una página que no dice lo que afirma. El editor lo reduce, no lo elimina.</li>
+    <li><b>Oficio:</b> no sustituye llamar a la fuente.</li>
+  </ul>
+</section>
+
+<section class="d negro">
+  <span class="kicker">Cierre</span>
+  <p class="enorme">El agente encuentra fuentes. <mark>El periodista decide.</mark></p>
+</section>
+</body>
+</html>

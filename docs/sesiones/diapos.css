@@ -1,0 +1,50 @@
+/* Presentación = scroll vertical con snap. Avanza con ↓, Espacio o AvPág. */
+:root { --ink: #111; --paper: #fffbea; --yellow: #ffd60a; --pink: #ff6b9d; --cyan: #4cc9f0; --lime: #b8f35a; --orange: #ff9f1c; --line: 4px solid var(--ink); }
+* { box-sizing: border-box; }
+html { scroll-snap-type: y mandatory; }
+body { margin: 0; color: var(--ink); background: var(--ink); font: clamp(18px, 2.2vw, 28px)/1.45 "Space Grotesk", system-ui, sans-serif; counter-reset: diapo; }
+
+.d {
+  min-height: 100vh; min-height: 100dvh; scroll-snap-align: start; position: relative;
+  display: grid; align-content: center; padding: 6vh max(16px, 7vw);
+  background: var(--paper); border-bottom: var(--line); counter-increment: diapo;
+}
+.d::after { content: counter(diapo); position: absolute; right: 20px; bottom: 16px; font: 700 .7em "Space Mono", monospace; background: var(--ink); color: var(--paper); padding: 2px 10px; }
+.d.amarillo { background: var(--yellow); } .d.rosa { background: var(--pink); } .d.cian { background: var(--cyan); }
+.d.lima { background: var(--lime); } .d.naranja { background: var(--orange); }
+.d.negro { background: var(--ink); color: var(--paper); } .d.negro::after { background: var(--paper); color: var(--ink); }
+
+h1, h2 { font-family: "Archivo Black", Impact, sans-serif; font-weight: 400; line-height: 1; margin: 0 0 .5em; letter-spacing: -.02em; }
+h1 { font-size: clamp(1.8rem, 8.5vw, 7rem); text-transform: uppercase; overflow-wrap: anywhere; }
+h2 { font-size: clamp(1.8rem, 5vw, 3.6rem); }
+p { margin: 0 0 .8em; max-width: 34em; }
+.kicker { display: inline-block; justify-self: start; font: 700 .75em "Space Mono", monospace; text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 4px 12px; margin-bottom: 1em; }
+.negro .kicker { background: var(--yellow); color: var(--ink); }
+.enorme { font-family: "Archivo Black", sans-serif; font-size: clamp(2rem, 7vw, 5.5rem); line-height: 1.05; max-width: 14em; }
+mark { background: var(--yellow); color: var(--ink); padding: 0 .15em; }
+.amarillo mark { background: var(--pink); }
+
+ul, ol { margin: 0; padding-left: 1.2em; max-width: 34em; } li { margin-bottom: .45em; }
+
+.cajas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; }
+.caja { background: #fff; border: var(--line); box-shadow: 8px 8px 0 var(--ink); padding: 20px 22px; }
+.caja b:first-child { display: block; font-family: "Archivo Black", sans-serif; font-size: 1.15em; margin-bottom: .3em; }
+.caja:nth-child(4n+1) { background: var(--cyan); } .caja:nth-child(4n+2) { background: var(--lime); }
+.caja:nth-child(4n+3) { background: var(--pink); } .caja:nth-child(4n+4) { background: var(--orange); }
+.negro .caja { color: var(--ink); }
+
+.diagrama { background: #fff; border: var(--line); box-shadow: 10px 10px 0 var(--ink); padding: 12px; max-width: 1100px; }
+.diagrama img { display: block; width: 100%; height: auto; max-height: 68vh; }
+
+code { font-family: "Space Mono", ui-monospace, monospace; font-size: .85em; background: #fff; border: 2px solid var(--ink); padding: 0 6px; color: var(--ink); }
+pre { margin: 0; max-width: 100%; overflow-x: auto; background: var(--ink); color: var(--lime); border: var(--line); box-shadow: 8px 8px 0 var(--yellow); padding: 18px 22px; font: .72em/1.5 "Space Mono", ui-monospace, monospace; }
+.negro pre { box-shadow: 8px 8px 0 var(--pink); border-color: var(--paper); }
+
+.dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 28px; align-items: start; }
+.nota { font-size: .75em; opacity: .85; margin-top: 1.2em; }
+
+.salir { position: fixed; left: 16px; bottom: 16px; z-index: 9; font: 700 14px "Space Grotesk", sans-serif; background: #fff; color: var(--ink); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 6px 12px; text-decoration: none; }
+.salir:hover { background: var(--lime); }
+:focus-visible { outline: 4px solid var(--pink); outline-offset: 3px; }
+
+@media print { html { scroll-snap-type: none; } .d { break-after: page; } .salir { display: none; } }
