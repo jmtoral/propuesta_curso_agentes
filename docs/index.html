@@ -203,7 +203,7 @@
 
   <section id="bibliografia">
     <h2>Bibliografía</h2>
-    <p style="margin-top:16px">Diez artículos que explican de dónde salen los agentes. No hace falta leerlos para el curso; están aquí para quien quiera ir a la fuente. Todos están abiertos en arXiv.</p>
+    <p style="margin-top:16px">Catorce artículos que explican de dónde salen los agentes. No hace falta leerlos para el curso; están aquí para quien quiera ir a la fuente. Todos están abiertos en arXiv.</p>
     <div class="sesiones">
       <article class="sesion"><div class="num">1</div><div class="cuerpo">
         <h3><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></h3>
@@ -254,6 +254,26 @@
         <h3><a href="https://arxiv.org/abs/2308.11432">A Survey on Large Language Model based Autonomous Agents</a></h3>
         <p class="practica">Wang et al. · Renmin University of China · 2023</p>
         <p>Un mapa del campo: cómo se construye un agente (perfil, memoria, planeación, acción), dónde se aplica y cómo se evalúa. Buen punto de partida para quien quiera una vista de conjunto.</p>
+      </div></article>
+      <article class="sesion"><div class="num">11</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></h3>
+        <p class="practica">Lewis et al. · Facebook AI Research, UCL y NYU · 2020</p>
+        <p>Presenta <b>RAG</b>: antes de responder, el modelo busca pasajes relevantes en una colección de documentos (aquí, Wikipedia) y escribe a partir de ellos. Responde mejor a preguntas de datos y puede mostrar de dónde sacó la información: lo que un periodista exige de una fuente.</p>
+      </div></article>
+      <article class="sesion"><div class="num">12</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2307.03172">Lost in the Middle: How Language Models Use Long Contexts</a></h3>
+        <p class="practica">Liu et al. · Stanford y otros · 2023</p>
+        <p>Los modelos encuentran mejor la información cuando está <b>al principio o al final</b> del contexto, y la pierden cuando está en medio, aunque el contexto sea largo. Es la evidencia detrás del context engineering: no basta con meterle todo al modelo.</p>
+      </div></article>
+      <article class="sesion"><div class="num">13</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2405.15793">SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering</a></h3>
+        <p class="practica">Yang et al. · Princeton · 2024</p>
+        <p>Los agentes son un nuevo tipo de usuario y necesitan herramientas hechas para ellos, igual que un programador necesita un buen editor. Diseñar esa <b>interfaz agente-computadora</b> (cómo abre, edita y prueba archivos) mejora mucho el resultado. Un antecedente directo del harness engineering.</p>
+      </div></article>
+      <article class="sesion"><div class="num">14</div><div class="cuerpo">
+        <h3><a href="https://arxiv.org/abs/2609.00006">Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents</a></h3>
+        <p class="practica">Barbaste, Darrigol, Vu et al. · 2026</p>
+        <p>Abre el código de once harnesses reales, entre ellos Claude Code, Codex CLI y Gemini CLI, y describe sus siete subsistemas básicos, entre ellos el bucle, las herramientas, el manejo de contexto y los controles de seguridad. Encuentra que las skills en <code>SKILL.md</code> ya están en 9 de los 11. Es el mapa más completo de lo que el curso llama harness.</p>
       </div></article>
     </div>
   </section>
